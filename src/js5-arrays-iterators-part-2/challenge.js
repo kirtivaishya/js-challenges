@@ -22,8 +22,9 @@
  */
 
 export const totalScoresArr = (scoresArr) => {
-  return;
+   return scoresArr.reduce((a, i) => a + i);
 };
+
 
 /**
  * A function that turns a string into an array and uses a ARRAY ITERATOR to reverse it.
@@ -35,7 +36,8 @@ export const totalScoresArr = (scoresArr) => {
  */
 
 export const reverseString = (toReverse) => {
-  return;
+  const arrayChar = Array.from(toReverse);
+  return arrayChar.reduce((a,v)=>v+a)
 };
 
 /**
@@ -48,10 +50,10 @@ export const reverseString = (toReverse) => {
  */
 
 export const sortCharactersAlphabetically = (charcterArr) => {
-  return;
+  return charcterArr.map(element=>element.toLowerCase()).sort();
 };
 
-/**
+/*4*
  * Intemediate Challenges
  */
 
@@ -63,7 +65,7 @@ export const sortCharactersAlphabetically = (charcterArr) => {
  */
 
 export const sortNumbersHighToLow = (numberArr) => {
-  return;
+  return numberArr.sort((a,b)=>b-a);
 };
 
 /**
@@ -94,7 +96,13 @@ export const checkItemInstock = (toCheck) => {
     "blueberry",
     "melon",
   ];
-  return;
+  if(stockList.includes(toCheck)){
+    return `${toCheck} is instock, it is on aisle ${stockList.indexOf(toCheck)}.`
+  }else{
+    return `Sorry ${toCheck} is not instock.`;
+  }
+
+ 
 };
 
 /**
@@ -108,7 +116,14 @@ export const checkItemInstock = (toCheck) => {
  */
 
 export const checkPrimaryColours = (coloursArr) => {
-  return;
+  const primaryArray=["red", "blue", "yellow"];
+  return coloursArr.every(colour=>primaryArray.includes(colour));
+  // if (coloursArr.every(primaryArray)) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+ // return ;
 };
 
 /**

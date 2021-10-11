@@ -124,8 +124,8 @@ export const formatStringArray = (stringArr) => {
   // console.log(???)
 
   const joinedString = cleanedArr.join("+");
-
   return joinedString;
+  
 };
 
 /**

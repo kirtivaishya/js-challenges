@@ -117,6 +117,9 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  */
 export const getGrade = (score) => {
   /* Write your code here */
+  if (typeof(score)!="number") {
+    return "Score unavailable";
+  } else{
  const grade=Math.floor(score*.1);
  console.log(grade);
   switch (grade) {
@@ -148,7 +151,7 @@ export const getGrade = (score) => {
       return "Score unavailable"
     //  break;
   }
-
+  }
 };
 //getGrade(77);
 /**
