@@ -21,6 +21,7 @@
  * @return {number} The price of the piece of furniture
  */
 export const getFurniturePrice = (furniture) => {
+  return furniture.price;
   /* Write code here */
 };
 
@@ -33,6 +34,8 @@ export const getFurniturePrice = (furniture) => {
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
   /* Write code here */
+  furniture.location = location;
+  return furniture;
 };
 
 /**
@@ -47,6 +50,7 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  */
 export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
   /* Write code here */
+  return { "name":name , "noOfSeats":noOfSeats,"engineType":engineType,"canTravelSolarSystems":canTravelSolarSystems }
 };
 
 /* Intermediate Challenges */
@@ -60,6 +64,11 @@ export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems
  */
 export const setUserName = (user, username) => {
   /* Write code here */
+  console.log(user.username);
+if(undefined ===user.username){ 
+  user.username=username;
+}
+return user;
 };
 
 /**
@@ -71,6 +80,8 @@ export const setUserName = (user, username) => {
  */
 export const splitFullNameToFirstAndLast = (customer) => {
   /* Write code here */
+   let fullNameArr=customer.fullName.split(" ");
+  return {fullName:customer.fullName,firstName:fullNameArr[0],lastName:fullNameArr[1]}
 };
 
 /**
@@ -84,6 +95,7 @@ export const splitFullNameToFirstAndLast = (customer) => {
  */
 export const accessGivenKey = (object, key) => {
   /* Write code here */
+  return object[key];
 };
 
 /* Advanced Challenges */
@@ -97,6 +109,7 @@ export const accessGivenKey = (object, key) => {
  */
 export const getUserAddress = (user) => {
   /* Write code here */
+  return `${user.address.line1} ${user.address.line2} ${user.address.city} ${user.address.postcode}`;
 };
 
 /**
@@ -109,6 +122,8 @@ export const getUserAddress = (user) => {
  */
 export const setSafeAllergens = (customer, allergenList) => {
   /* Write code here */
+  customer.safeAllergens=allergenList;
+  return customer;
 };
 
 /* Expert Challenge */

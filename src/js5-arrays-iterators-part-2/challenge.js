@@ -39,7 +39,7 @@ export const reverseString = (toReverse) => {
   const arrayChar = Array.from(toReverse);
   return arrayChar.reduce((a,v)=>v+a)
 };
-
+//console.log(reverseString("totest"));
 /**
  * A function that arranges an array of characters alphabetically.
  * Each character will need to be lowercase.
@@ -140,7 +140,11 @@ export const checkPrimaryColours = (coloursArr) => {
  */
 
 export const checkStringPalindrome = (stringOne) => {
-  return;
+  if (stringOne==[...stringOne].reduce((a,b)=>b+a)){
+  return true;
+  }else {
+    return false;
+  }
 };
 
 /**
@@ -154,7 +158,7 @@ export const checkStringPalindrome = (stringOne) => {
  */
 
 export const totalNestedScoresArr = (scoresArr) => {
-  return;
+  return scoresArr.reduce((accumulator,current)=>accumulator.concat(totalScoresArr(current)),[]);
 };
 
 /**
@@ -187,5 +191,8 @@ export const totalNestedScoresArr = (scoresArr) => {
  */
 
 export const encryptString = (toEncrypt) => {
+  let charArr = toEncrypt.split("");
+  let reverseArr = [];
+  charArr.reduce((a,b,currentIndex)=>reverseArr.push(charArr[currentIndex%3]),reverseArr);
   return;
 };
